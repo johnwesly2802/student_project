@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <h3 align="center">Update Student Details</h3> 
+        <form action="/updatestu/{{student.id}}" method="POST">
+            {% csrf_token %}
+            <!-- <input type="hidden" name="stuid" value="{{student.id}}"> -->
+            <table align="center">
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="stuname" value="{{student.name}}"> </td>
+                </tr>
+                <tr>
+                    <td>Branch:</td>
+                    <td><input type="text" name="stubranch" value="{{student.branch}}"> </td>
+                </tr>
+                <tr>
+                    <td>Percentage:</td>
+                    <td><input type="text" name="stuperc" value="{{student.percent}}"> </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2"><input type="submit" value="Add student"></td>
+                </tr>
+            </table> 
+        </form>          
+    </body>
+</html>

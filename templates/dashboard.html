@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Student Details</h2> 
+    <a href="/student">new form</a>
+    <!-- {{ studata }} -->
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Branch</th>
+            <th>Percentage</th> 
+            <th>Actions</th>           
+        </tr>
+        {% for stu in studata %}
+        <tr>
+            <td> {{ stu.id }}</td>
+            <td> {{ stu.name }}</td>
+            <td> {{ stu.branch }}</td>
+            <td> {{ stu.percent }}</td>
+            <td>
+                <a href="/delstu/{{ stu.id }}">Delete</a>&nbsp;&nbsp;
+                <a href="/updatestu/{{ stu.id }}">update</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

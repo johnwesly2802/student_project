@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 align="center">Add student</h3>
+    <form action="/student" method="POST">
+        {% csrf_token %}
+        <table align="center">
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="stuname"></td>
+            </tr>
+            <tr>
+                <td>Branch:</td>
+                <td><input type="text" name="stubranch"></td>
+            </tr>
+            <tr>
+                <td>Percentage:</td>
+                <td><input type="text" name="stuperc"></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2"><input type="submit" value="Add student"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

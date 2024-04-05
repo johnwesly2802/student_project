@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block 'main' %}
+<div class="row">
+    <div class="col-md-6">
+        <img src="{{ student.pimage.url }}" height="100" class="card-img-top" alt="no image" height="450px" >
+    </div>
+    <div class="col-md-6"></div>
+        <h2>Name:{{ student.name }}</h2>
+        <p> <strong>Brand: {{ student.branch }}</strong></p>
+        <p> <strong>Price: {{ student.percent }}RS</strong></p>
+        <a href="/index" class="btn btn-primary">Back </a>
+        <a href="/addtocart/{{student.id}}" class="btn btn-dark">Add To Cart</a>&nbsp; &nbsp;
+        <a href="/viewcart" class="btn btn-dark">view cart</a>&nbsp; &nbsp;
+        <a href="/index" class="btn btn-dark">shopmore</a>
+    </div>
+</div>
+{% endblock 'main' %}

@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block 'main' %}
+<div class="row">
+    <div class="col-md-8">
+        {% for c in cart %}
+        <div class="row" vs>
+            <div class="col-md-6">
+                <img src="{{ c.sid.pimage.url }}" class="card-img-top" alt="...">
+            </div>
+            <div class="col-md-6">
+                <h5 class="card-title">name:{{ c.sid.name }}</h5>
+                <p><strong>brand {{ c.sid.branch }}</strong></p>
+                <p><strong>price {{ c.sid.percent }}RS</strong></p>
+                <p><strong>quantity {{ c.sid.quantity }}</strong></p>
+                {% if c.quantity > 1 %}
+                <a href="/updateqty/0/{{c.id}}"><button class="btn btn-dark">-</button></a>
+                {% endif %}
+                <strong>{{c.quantity}}</strong>&nbsp;
+                <a href="/updateqty/1/{{c.id}}"><button class="btn btn-dark">+</button></a>
+                <a href="/delete/{{c.id}}"><button class="btn btn-dark">delete</button></a>
+            </div>
+        </div>
+            {% endfor %}
+    </div>
+        <div class="col-md-4">
+            <!-- <h5 class="bg-danger"></h5> -->
+            <h5 class="btn btn-dark text-white ">Bill Details</h5>
+            <h5> Total Items: {{count}}</h5>
+            <h5> Bill: Rs.{{total}} </h5>
+            <a href="/placeorder"><button class="btn btn-dark">Place Order</button></a>
+        </div>
+
+     </div>
+
+
+</div>
+{% endblock %}
